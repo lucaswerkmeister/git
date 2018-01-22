@@ -8,7 +8,7 @@ git-daemon - A really simple server for Git repositories
 SYNOPSIS
 --------
 [verse]
-'git daemon' [--verbose] [--syslog] [--export-all]
+'git daemon' [--verbose] [--[no-]syslog] [--export-all]
 	     [--timeout=<n>] [--init-timeout=<n>] [--max-connections=<n>]
 	     [--strict-paths] [--base-path=<path>] [--base-path-relaxed]
 	     [--user-path | --user-path=<path>]
@@ -109,9 +109,11 @@ OPTIONS
 	Maximum number of concurrent clients, defaults to 32.  Set it to
 	zero for no limit.
 
---syslog::
+--[no-]syslog::
 	Log to syslog instead of stderr. Note that this option does not imply
 	--verbose, thus by default only error conditions will be logged.
+	--no-syslog may be used to cancel the implicit --syslog of
+	--inetd or --detach.
 
 --user-path::
 --user-path=<path>::

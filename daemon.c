@@ -1300,6 +1300,10 @@ int cmd_main(int argc, const char **argv)
 			log_syslog = 1;
 			continue;
 		}
+		if (!strcmp(arg, "--no-syslog")) {
+			log_syslog = 0;
+			continue;
+		}
 		if (!strcmp(arg, "--export-all")) {
 			export_all_trees = 1;
 			continue;
